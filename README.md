@@ -1,7 +1,7 @@
 # Post-processing for the LES modeling of the SEASTARR project
 
 ### Descriptions:
-SEASTARR is a collaborative numerical modeling work to study aerosol-cloud interaction over South-East Atlantic. Multiple international academic groups are involved. Each group conducted various Large Eddy Simulation (LES) experiments. Only the post-processing of LES SAM UW modeling outputs is documented here.
+SEASTARR is a collaborative numerical modeling work to study aerosol-cloud interaction over South-East Atlantic. Multiple international academic groups are involved. Each group conducted various Large Eddy Simulation (LES) experiments using their own model. At UW, SAM-UW was used. Only the post-processing of UW LES modeling outputs is documented here.
 
 ### Authors:
 The main post-processing code is developed by Ehsan Erfani.
