@@ -4,14 +4,18 @@
 SEASTARR is a collaborative numerical modeling work to study aerosol-cloud interaction over South-East Atlantic. Multiple international academic groups are involved. Each group conducted various Large Eddy Simulation (LES) experiments using their own model. At UW, SAM-UW was used. Only the post-processing of UW LES modeling outputs is documented here.
 
 ### Authors:
-The main post-processing code is developed by Ehsan Erfani.
-
-The codes regarding the conversion to DEPHY format are created by Michael Diamond for NOAA-SAM and are modified by Ehsan Erfani for UW-SAM.
+- The main post-processing code is developed by Ehsan Erfani.
+- The codes regarding the conversion to DEPHY format are created by Michael Diamond for NOAA-SAM and are modified by Ehsan Erfani for UW-SAM.
 
 ### Codes:
-SEASTARR_postprocessing.ipynb: Use LES SAM UW model outputs and perform post-processing analysis
+- SEASTARR_postprocessing.ipynb: Use LES SAM UW model outputs and perform post-processing analysis
+- DEPHY_stat.ipynb: Convert SAM stat output to DEPHY standards for SEA STARR
+- DEPHY_2D.ipynb:   Convert SAM 2D (x-y) output to DEPHY standards for SEA STARR
 
-DEPHY_stat.ipynb: Convert SAM stat output to DEPHY standards for SEA STARR
+### Inputs:
+- SAM-UW output files in NetCDF format.
+- SAM-UW forcing file in NetCDF format.
 
-DEPHY_2D.ipynb:   Convert SAM 2D (x-y) output to DEPHY standards for SEA STARR
-
+### Requirements:
+- Python3 in Jupyter Notebook (installed by Anaconda).
+- See the beginning of each code for the required Python3 libraries.
