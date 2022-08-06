@@ -1,0 +1,198 @@
+
+&SGS_TKE
+dosmagor = .false.
+/
+
+
+ &MICRO_DRIZZLE
+
+ Nc0 = 100.
+ sigmag = 1.2
+
+/
+
+ &MICRO_M2005
+
+ Nc0 = 100.,
+ doicemicro = .false.
+
+/
+
+ &MICRO_M2005_PA
+
+ Nc0 = 100.,
+ dofix_pgam = .true.
+ pgam_fixed = 10.3 ! Geoffroy et al (2010, doi:10.5194/acp-10-4835-2010)
+
+ doicemicro = .false.
+ dototalwater = .true.
+
+ dopredictNc = .true.
+ dospecifyaerosol = .true.
+ doprogaerosol = .true.
+ aerinitmode = 0   ! have the forcing file set the initial MBL and FT aerosols
+
+ docloudedgeactivation = .true.
+ douse_reffc = .true.
+ massfactor = 1.
+
+ do_m2011_scavenge = .true.
+
+ rho_aerosol = 1769  ! This value suggested by Michael. ! kg/m3 ! 1300.
+ dospecify_hygro = .true. 
+ hygro = 0.2
+
+ aer_rm1 = 0.1
+ aer_sig1 = 2.0
+ aer_n1 = 100.
+
+! aerfluxmode = 2         ! Variable surface aerosol flux
+! sflux_nacc_coef = 44440000.
+! sflux_racc = 0.13
+
+ aerfluxmode = 1          ! Constant surface aerosol flux
+ fluxNad0 = 700000.       ! fluxNad0 = 70 cm-2 s-1 = 700000 m-2 s-1
+ fluxQAd0 = 3.0541847e-11 ! fluxQAd0 = 3.0541847e-11 kg kg-1 s-1
+
+!To output more microphysical process tendencies:
+ do_output_micro_process_rates = .true.
+ do_aerosol_chunk_budgets = .true.
+
+/
+
+ &MICRO_THOM
+
+ Nc0 = 100.,
+ doicemicro = .false.
+
+/
+
+ &PARAMETERS
+
+ caseid ='120sqx288_50m_M2005PA_RRTM4PBL_UM5_ProgAer_test_CTRL',
+
+ nrestart = 1,
+
+ CEM = .true.,
+
+ OCEAN = .true.,
+
+ dosgs		= .true.,
+ dodamping 	= .true.,
+ doupperbound  	= .true.,
+ docloud 	= .true.,
+ doprecip 	= .true.,
+ doradsimple    = .false., 
+ dolongwave	= .true.,
+ doshortwave	= .true.,
+ dosurface 	= .true.,
+ dolargescale 	= .true.,
+ doradforcing   = .false.,
+ dosfcforcing   = .true.,
+ docoriolis 	= .true.,
+ donudging_uv   = .true.,
+ donudging_tq   = .true.,
+
+ donudging_t    = .true.,
+ donudging_q    = .true.,
+ 
+ ! apply temperature nudging starting xxx meters above inversion
+ dovariable_tauz = .true.
+ variable_tauz_offset_above_inversion = 200. ! meters
+ variable_tauz_thickness_of_onset = 300. ! meters
+ variable_tauz_minimum_height = 1000.
+ tautqls = 1800.,   ! nudging time-scale for tq, in units of seconds; Based on Michael's note in the original forcing file
+ tauls   = 10800.,  ! nudging time-scale for uv, in units of seconds; Based on Michael's note in the original forcing file 
+
+ nudging_t_z2 = 40.e3
+ nudging_q_z2 = 40.e3
+
+ SFC_FLX_FXD    = .false.,
+ SFC_TAU_FXD    = .false.,
+
+ latitude0  = -11.6490895156104,  ! From forcing file
+ longitude0 = -8.33649674823219,
+
+ ug = -2.,
+ vg = -4.,
+
+ dx = 	50.,
+ dy = 	50.,
+
+ dt = 1.0,   ! 3.0,
+
+ nxco2 = 1.
+
+ doperpetual = .false.
+ dosolarconstant = .true.
+ solar_constant = 593.6336
+ zenith_angle = 38.7340
+ nrad = 15,
+ day0= 227.875,
+
+ nstop 	 = 237600,  ! (237600 or total of 66 hours of data available in Forcing file for dt = 1) ! If dt = 2: 118800
+ nprint  = 900,     ! frequency of short printouts (in time steps) performed during the execution
+ nstat 	 = 900,     ! number of time steps used for averaging the statistics output
+ nstatfrq= 20,      ! number of samples collected over the nstat steps
+
+ nsave2D	= 900,  ! sampling period of 2D fields in model steps
+ nsave2Dstart	= 0,
+ nsave2Dend	= 99997200,
+ save2Dbin      = .true.
+ save2Davg      = .false.  ! instantaneous output
+
+ nsave3D	= 3600,  ! frequency of writing 3D snapshots in time steps
+ nsave3Dstart	= 0,
+ nsave3Dend	= 999999999,
+ save3Dbin      = .true.
+
+ doSAMconditionals = .true.
+ dosatupdnconditionals = .true.
+
+ doisccp = .true.
+ domodis = .true.
+ domisr = .true.
+
+ doSCAMiopdata = .true.
+ dozero_out_day0 = .false.
+ iopfile = 'SEA_STARR_CTRL_SCM_driver_SCAMIOP_Created_20-Jun-2022.nc'
+ use_scam_reference_sounding = .false.
+ 
+ perturb_type = 6
+
+ ncycle_min = 1,
+ ncycle_max = 40,
+ cfl_safety_factor = 1.5
+
+ tabs_s = 293.3325
+
+ do_chunked_energy_budgets = .true.  ! .true.
+ nchunk_x_gl = 12
+ nchunk_y_gl = 12
+ nsaveMSE = 5400
+
+ doradaerosimple = .true. !Use lookup table to set aerosol radiative properties
+
+/ 
+
+ &UWOPTIONS
+
+ nelapsemin = 2360,  ! 450,
+
+ donudging_transient = .false.
+ transient_nudging_start = 194.75 ! day
+ transient_nudging_end = 196.75 ! day
+ transient_nudging_ramp = 0.0625 ! day
+ tau_transient_nudging = 10800. ! second
+
+ dowtg_blossey_etal_JAMES2009 = .false.
+ am_wtg = 1.,
+ am_wtg_exp = 1.,
+ lambda_wtg = 200.e3, ! This is stronger than default to strenthen "inversion nudging"
+ wtg_end_time = 196.75 ! when SST starts increasing (day)
+ wtg_end_ramp = 0.0625 ! time over which WTG falls off (day)
+
+! do_smooth_reference_density = .true.
+! lz_smooth = 600.
+
+/
