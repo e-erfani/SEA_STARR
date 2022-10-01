@@ -21,3 +21,6 @@ SEAS TARR is a collaborative numerical modeling work to study aerosol-cloud inte
 ### Requirements:
 - Python3 in Jupyter Notebook (installed by Anaconda).
 - See the beginning of each code for the required Python3 libraries.
+
+### The analyses are featured in:
+Diamond, M., E. Erfani, et al., 2023: work in progress.
