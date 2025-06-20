@@ -24,5 +24,7 @@ SEAS TARR is a collaborative numerical modeling work to study aerosol-cloud inte
 
 ### The analyses are featured in:
 Diamond, et al., (2025) (including E. Erfani) work in progress.
+
 Conference presentation:
+
 Diamond, m., Ackerman, A., Baró Pérez, A., Bender, F., Ekman, A., Erfani, E., Fridlind, A., Feingold, G., Howes, C., Kazil, J., Saide, P., Wood, R., Yamaguchi, T., Zhang, J., Zhou, X., Zuidema, P. (2023). SE Atlantic Sc-Cu Transition with Aerosol-Radiation-Rain interactions (SEA STARR): An LES Intercomparison of Entrainment- and Precipitation-Driven Low Cloud Transitions in the Presence of Smoke. American Meteorological Society (AMS) Annual Meeting: Denver, CO, January 8, 2023-January 12, 2023
