@@ -1,4 +1,4 @@
-# Pre- and Post-processing for the LES modeling of the SEA STARR project
+# Pre- and Post-processing for the UW-SAM LES modeling of an intercomparison project called SEA STARR (Southeastern Atlantic Stratocumulus Transitions with Aerosol-Rain-Radiation interactions)
 
 ### Descriptions:
 SEAS TARR is a collaborative numerical modeling work to study aerosol-cloud interaction over South-East Atlantic. Multiple international academic groups are involved. Each group conducted various Large Eddy Simulation (LES) experiments using their own model. At UW, SAM-UW was used. Only the pre- and post-processing of UW LES modeling outputs is documented here.
